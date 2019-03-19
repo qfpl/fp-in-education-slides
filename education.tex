@@ -1,0 +1,250 @@
+\documentclass[UKenglish,usenames,dvipsnames,svgnames,table,aspectratio=169,mathserif]{beamer}
+
+\mode<presentation> {
+
+%\usetheme{default}
+\usetheme{Madrid}
+
+\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{hyperref}
+\usepackage{apacite}
+\usepackage{babel}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage{alltt}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{courier}
+\usepackage{minted}
+\usepackage{epstopdf}
+\usepackage{xifthen}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{svg}
+\usepackage{pdfpages}
+\usepackage{isodate}
+
+\hypersetup{colorlinks=false}
+
+\setbeamertemplate{bibliography entry title}{}
+\setbeamertemplate{bibliography entry location}{}
+\setbeamertemplate{bibliography entry note}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[circle]
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}{}
+
+
+\newminted{haskell}{}
+
+\lstdefinelanguage{haskell}{
+  morekeywords={class,instance,where,do,data,newtype,default,deriving,module,import,qualified,as},
+  otherkeywords={<-},
+  sensitive=true,
+  morecomment=[l]{--},
+  morecomment=[n]{\{-}{-\}},
+  morestring=[b]",
+  morestring=[b]"""
+}
+
+\lstnewenvironment{code}{
+  \lstset{
+    language=haskell,
+    basicstyle=\small\ttfamily,
+    stringstyle=\color{olive}\ttfamily,
+    escapeinside={*@}{@*},
+    showstringspaces=false
+  }
+}{}
+
+\definecolor{g}{RGB}{0,100,0}
+\newcommand{\highlight}[1]{\colorbox{yellow}{#1}}
+\newcommand{\nega}[1]{\colorbox{yellow}{#1}}
+\newcommand{\posi}[1]{\colorbox{green}{#1}}
+\newcommand{\nl}{\vspace{\baselineskip}}
+\newcommand{\pnl}{\pause \nl}
+
+\graphicspath{{images/}}
+
+\newcommand{\textslide}[1]{{
+\begin{frame}
+\begin{center}
+
+#1
+
+\end{center}
+\end{frame}
+}}
+
+\newcommand{\textslideleft}[1]{{
+\begin{frame}
+
+#1
+
+\end{frame}
+}}
+
+\newcommand{\codeslide}[1]{{
+\begin{frame}[fragile]
+\begin{haskellcode}
+#1
+\end{haskellcode}
+\end{frame}
+}}
+
+
+\newcommand{\imageslide}[2][1]{{
+\begin{frame}\begin{center}
+\includegraphics[scale=#1]{#2}
+\end{center}\end{frame}
+}}
+
+\newcommand{\imageslideleft}[2][1]{{
+\begin{frame}
+\includegraphics[scale=#1]{#2}
+\end{frame}
+}}
+
+\newcommand{\imagetextslide}[3][1]{{
+\begin{frame}\begin{center}
+
+{#3}
+
+\includegraphics[scale=#1]{#2}
+\end{center}\end{frame}
+}}
+
+\newcommand{\svgslide}[1]{{
+\begin{frame}
+\begin{center}
+\includesvg{diagrams/#1}
+\end{center}
+\end{frame}
+}}
+
+\definecolor{bgc}{RGB}{255, 255, 255}
+\setbeamercolor{background canvas}{bg=bgc}
+
+
+%%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Education]{Functional Programming in Education}
+\titlegraphic{\includegraphics[scale=0.2]{data61.eps}}
+\author{George Wilson}
+\institute[]
+{
+Data61/CSIRO\\
+\medskip
+\href{george.wilson@data61.csiro.au}{george.wilson@data61.csiro.au}
+}
+
+\selectlanguage{UKenglish}
+\date{\printdate{2018-05-22}}
+
+\begin{document}
+
+%%%%%
+%%%%% Intro section
+%%%%%
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+%%%%% SICP
+\begin{frame}
+\centering
+\includegraphics{sicp.jpg}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{Verbatim}
+(define (map f l)
+  (if (null? l)
+      nil
+      (cons (f (car l) (map f (cdr l))))))
+\end{Verbatim}
+\end{frame}
+
+
+\begin{frame}
+\centering
+\includegraphics[scale=0.8]{sicp-factorial.png}
+\end{frame}
+
+
+\begin{frame}
+\centering
+\includegraphics{sicp-box-and-pointer.png}
+\end{frame}
+
+
+%%%%% Wadler
+\begin{frame}
+\centering
+\includegraphics[scale=0.5]{wadler-title.png}
+\end{frame}
+
+
+\begin{frame}
+\centering
+\includegraphics[scale=0.55]{wadler-abstract.png}
+% TODO highlight bits?
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{Verbatim}
+(define (map proc items)
+  (if (null? items)
+      nil
+      (cons (proc (car items))
+            (map proc (cdr items)))))
+\end{Verbatim}
+\nl
+
+\begin{haskellcode}
+map :: (a -> b) -> [a] -> [b]
+map f l =
+  case l of
+    []       -> []
+    (x : xs) -> f x : map f xs
+\end{haskellcode}
+\end{frame}
+
+
+\begin{frame}
+\huge \centering
+Thanks for listening!
+\end{frame}
+
+
+%\begin{frame}
+%\frametitle{Attributions}
+%\begin{itemize}
+%\item
+%  Structure and Interpretation of Computer Programs \\
+%  Harold Abelson and Gerald Jay Sussman with Julie Sussman \\
+%  Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+%\item
+%  How to Design Programs \\
+%  Matthias Felleisen, Robert Bruce Findler, Matthew Flatt, Shriram Krishnamurthi \\
+%  Attribution-NonCommercial-NoDerivs 2.0 Generic (CC BY-NC-ND 2.0)
+%\end{itemize}
+%\end{frame}
+
+
+\end{document}
+
