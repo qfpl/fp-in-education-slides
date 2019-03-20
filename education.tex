@@ -44,6 +44,7 @@
 
 
 \newminted{haskell}{}
+\newminted{scheme}{}
 
 \lstdefinelanguage{haskell}{
   morekeywords={class,instance,where,do,data,newtype,default,deriving,module,import,qualified,as},
@@ -170,12 +171,44 @@ Data61/CSIRO\\
 
 
 \begin{frame}[fragile]
-\begin{Verbatim}
-(define (map f l)
-  (if (null? l)
+\begin{schemecode}
+(define (map proc items)
+  (if (null? items)
       nil
-      (cons (f (car l) (map f (cdr l))))))
-\end{Verbatim}
+      (cons (proc (car items))
+            (map proc (cdr items)))))
+\end{schemecode}
+\end{frame}
+
+
+\begin{frame}
+\centering
+\begin{tabular}{|l|l|}
+\hline
+       & Content \\
+\hline\hline
+Week 1 & Basic expressions  \\
+\hline
+Week 2 & procedure declarations \\
+\hline
+Week 3 & if-statement \\
+\hline
+Week 4 & while-statement \\
+\hline
+Week 5 & for-statement \\
+\hline
+\ldots & \\
+\end{tabular}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{schemecode}
+(define (abs x)
+  (cond ((> x 0) x)
+        ((= x 0) x)
+        ((< x 0) (- x))))
+\end{schemecode}
 \end{frame}
 
 
