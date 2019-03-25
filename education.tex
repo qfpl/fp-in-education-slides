@@ -261,11 +261,7 @@ Incredible breadth of content
 \end{frame}
 
 
-\begin{frame}
-\centering
-\includegraphics{sicp-box-and-pointer.png}
-\end{frame}
-
+\imageslide[0.5]{htdp-cover.png}
 
 %%%%% Wadler
 \begin{frame}
@@ -282,13 +278,13 @@ Incredible breadth of content
 
 
 \begin{frame}[fragile]
-\begin{Verbatim}
+\begin{schemecode}
 (define (map proc items)
   (if (null? items)
       nil
       (cons (proc (car items))
             (map proc (cdr items)))))
-\end{Verbatim}
+\end{schemecode}
 \nl
 
 \begin{haskellcode}
@@ -299,6 +295,38 @@ map f l =
     (x : xs) -> f x : map f xs
 \end{haskellcode}
 \end{frame}
+
+
+\begin{frame}[fragile]
+\LARGE
+\begin{schemecode}
+             (list 3 4)
+
+             (cons 3 4)
+\end{schemecode}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{columns}[T]
+\LARGE
+\column{0.5\textwidth}
+\begin{schemecode}
+  (cons 3 4)
+\end{schemecode}
+\includegraphics{list-cons1.pdf}
+
+\column{0.5\textwidth}
+\begin{schemecode}
+  (list 3 4)
+\end{schemecode}
+\includegraphics{list-cons2.pdf}
+\end{columns}
+\end{frame}
+
+
+\imageslide[1.3]{pushout1.pdf}
+\imageslide[1.3]{pushout2.pdf}
 
 
 \begin{frame}

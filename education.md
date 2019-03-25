@@ -39,12 +39,17 @@
   * doesn't teach decomposition of problems and assembly of solutions
   * ???      TODO other reasons
 * How to Design Programs
-  * They solved these problems with HTDP!
+  * They solved these problems!
   * If you don't take anything else from the talk, this book is a great place to start
-  * They provide a _staged introduction_ to the language
-    * TODO advantages of doing so
+  * Simpler examples
+    * TODO examples
+  <!-- * They provide a _staged introduction_ to the language -->
+    <!-- * TODO advantages of doing so -->
   * Thinking about types helps you think about programs
     * System F type signatures in comments! TODO diagram of this
+  * Helpful IDE (Dr. Racket)
+    * TODO image
++++
 * Wadler 1987
   * HTDP people weren't the only ones to criticise SICP
   * Wadler criticised the use of Scheme
