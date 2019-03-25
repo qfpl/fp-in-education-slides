@@ -1,21 +1,29 @@
 # education
 
-* FP has a history of being used in tertiary education. I believe it could be used there more
-* Start with SICP, a landmark book in the history of computing education
-  * MIT
-  * 1985
-  * Scheme, a dialect of Lisp
-    * That's pretty weird! Common to see industry-fashionable languages (C, Basic, perhaps COBOL or Fortran)
-    * Scheme only used in research or teaching. Good reasons why use it in research, but why use in teaching?
+* interested in the first programming class a university student takes
+  * first year, first semester
+  * "Introduction to Programming" or "Programming One"
+  * In particular, which language?
+    +++
     * Most intro computing courses are _syntax-directed_
       * This week, if statement
       * next week, while statement
-    * Scheme has almost no syntax!
+* FP has a history of being used in tertiary education. I believe it could be used there more
++++
+* Start with SICP, a landmark book in the history of computing education
+  * MIT 1985
+  * Scheme, a dialect of Lisp
+    +++
+    * That's pretty weird! Common to see industry-fashionable languages (C, Basic, perhaps COBOL or Fortran)
+    * Scheme only used in research or teaching. Good reasons why use it in research, but why use in teaching?
+    * Scheme has almost no syntax! This has advantages for teaching
+      +++
       * expressions, procedure declarations, if-statments all taught in the first week
       * No while-statements! or for-statements!
-      * First hour of first lecture, almost the entirety of Scheme the language has been covered
+      * First hour of first lecture, almost the entirety of Scheme-the-language has been covered
       * We're not interested in details of some particular language
-      * interested in computing
+        * interested in computing
+      +++
       * visualising recursion
   * Covers a lot of computer science concepts!
     * implementing OOP
@@ -23,12 +31,14 @@
     * Interpreters - "Metalinguistic abstraction"
     * Incredible breadth!
   * But it's not perfect
-* How to Design Programs
+  * How could we improve on it?
++++
   * SICP's examples are drawn from complex domains
     * Calculus
     * Electrical engineering
   * doesn't teach decomposition of problems and assembly of solutions
   * ???      TODO other reasons
+* How to Design Programs
   * They solved these problems with HTDP!
   * If you don't take anything else from the talk, this book is a great place to start
   * They provide a _staged introduction_ to the language
@@ -54,4 +64,4 @@
 * Wouldn't it be cool to integrate the improvements of both
   * TODO push-out diagram
 * Chak 2004
-  * 
+  *

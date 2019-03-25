@@ -163,24 +163,6 @@ Data61/CSIRO\\
 \end{frame}
 
 
-%%%%% SICP
-\begin{frame}
-\centering
-\includegraphics{sicp.jpg}
-\end{frame}
-
-
-\begin{frame}[fragile]
-\begin{schemecode}
-(define (map proc items)
-  (if (null? items)
-      nil
-      (cons (proc (car items))
-            (map proc (cdr items)))))
-\end{schemecode}
-\end{frame}
-
-
 \begin{frame}
 \centering
 \begin{tabular}{|l|l|}
@@ -202,6 +184,24 @@ Week 5 & for-statement \\
 \end{frame}
 
 
+%%%%% SICP
+\begin{frame}
+\centering
+\includegraphics{sicp.jpg}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{schemecode}
+(define (map proc items)
+  (if (null? items)
+      nil
+      (cons (proc (car items))
+            (map proc (cdr items)))))
+\end{schemecode}
+\end{frame}
+
+
 \begin{frame}[fragile]
 \begin{schemecode}
 (define (abs x)
@@ -212,9 +212,52 @@ Week 5 & for-statement \\
 \end{frame}
 
 
+\begin{frame}[fragile]
+Evaluation by substitution
+
+\nl
+\begin{schemecode}
+     (sum-of-squares 3 4)
+
+=>   (+ (sq 3) (sq 4))
+=>   (+ (* 3 3) (sq 4))
+=>   (+ 9 (sq 4))
+=>   (+ 9 (* 4 4))
+=>   (+ 9 16)
+=>   25
+\end{schemecode}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\begin{schemecode}
+(define (factorial n)
+  (if (<= n 1)
+      1
+      (* n (factorial (- n 1)))))
+\end{schemecode}
+\end{frame}
+
+
 \begin{frame}
 \centering
 \includegraphics[scale=0.8]{sicp-factorial.png}
+\end{frame}
+
+
+\begin{frame}
+\begin{center}
+Incredible breadth of content
+\begin{itemize}
+\item recursion
+\item complexity analysis
+\item meta-linguistic abstraction
+\item interpreters
+\item object-oriented programming
+\item logic programming
+\item many other things
+\end{itemize}
+\end{center}
 \end{frame}
 
 
