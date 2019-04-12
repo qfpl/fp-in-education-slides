@@ -1,0 +1,11 @@
+prologue
+discusses what it means to be a programmer
+
+
+https://www.htdp.org/2019-02-24/part_one.html
+section 1.2
+discusses string append laws, sort of
+
+section 1.3
+Try invalid arguments to get type errors
+Think about which values this functon works for
