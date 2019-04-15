@@ -9,3 +9,25 @@ discusses string append laws, sort of
 section 1.3
 Try invalid arguments to get type errors
 Think about which values this functon works for
+
+1.5
+introduces if, what is an expression, evaluation
+great how much it just says "have a got to figure out how it works, guess a law, check the docs"
+  this is at the core of programming
+subtly teaches how to name things by not telling you what to name tall/wide/square
+coverage highlighting in IDE teaches about evaluation order
+
+OMG program stepper <3<3<3
+
+ex 27 factor out magic numbers into constants
+ex 29, refactor this program in response to a change in requirements
+
+Discusses the differences between batch programs and interactive programs
+
+ex32 - really good!!! What kind of events will future computing systems have to respond to?
+
+Section 3 - HTDP
+  Great that it takes a step back after basic expressions and then giving a taste for harder problems
+  covers unit testing in a really good and natural way
+
+

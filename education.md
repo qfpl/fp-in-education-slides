@@ -57,6 +57,7 @@
     * KRC and Miranda are both ancestors of Haskell
     * lazy functional languages with type inference
   * lack of pattern matching obscures the shape of data     TODO more
+  * quote is hard to understand and unnecessary to an intro course      TODO (car (quote (a b)))
   * lack of typing discipline leads to fundamental misunderstandings     TODO more
     * type inference great for beginners. Types help before we even know what they are!
   * TODO more bullets
