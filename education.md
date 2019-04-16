@@ -8,7 +8,7 @@
     * Most intro computing courses are _syntax-directed_
       * This week, if statement
       * next week, while statement
-* FP has a history of being used in tertiary education. I believe it could be used there more
+* FP has a history of usage in tertiary education. I believe it could be used there more
 +++
 * Start with SICP, a landmark book in the history of computing education
   * MIT 1985
@@ -18,7 +18,7 @@
     * Scheme only used in research or teaching. Good reasons why use it in research, but why use in teaching?
     * Scheme has almost no syntax! This has advantages for teaching
       +++
-      * expressions, procedure declarations, if-statments all taught in the first week
+      * expressions, procedure declarations, if-statements all taught in the first week
       * No while-statements! or for-statements!
       * First hour of first lecture, almost the entirety of Scheme-the-language has been covered
       * We're not interested in details of some particular language
@@ -43,8 +43,8 @@
   * If you don't take anything else from the talk, this book is a great place to start
   * Simpler examples
     * TODO examples
-  <!-- * They provide a _staged introduction_ to the language -->
-    <!-- * TODO advantages of doing so -->
+  * They provide a _staged introduction_ to the language
+    * This lets them provide better analysis at earlier stages
   * Thinking about types helps you think about programs
     * System F type signatures in comments! TODO diagram of this
   * Helpful IDE (Dr. Racket)
