@@ -4,6 +4,7 @@
   * first year, first semester
   * "Introduction to Programming" or "Programming One"
   * In particular, which language?
+  * The choice of language is important because it informs the structure of the course
     +++
     * Most intro computing courses are _syntax-directed_
       * This week, if statement
@@ -30,6 +31,7 @@
     * implementing logic programming
     * Interpreters - "Metalinguistic abstraction"
     * Incredible breadth!
+  * I like to describe SICP as a tasting-plate of computer science, and it is an exceptional one
   * But it's not perfect
   * How could we improve on it?
 +++
