@@ -128,8 +128,31 @@ special forms. But lazy languages do not need special forms. We can write `if` a
 a function. This reduces unnecessary load of the students; the substitution model always
 works and special forms don't need to be separately taught.
 
-For these reasons, I think Haskell, or something like it, is an exceptionally
-suitable language in which to teach introductory programming. It has little
-syntax, which allows more freedom in course structure, but it has helpful
-syntax such as pattern matching, and is similar to mathematical notation that
-students might be familiar with.
+HTDP and Wadler offer orthogonal ways to improve on SICP, and we could
+have an even better course by learning from both improvements.
+
+I think Haskell, or something like it, is an exceptionally
+suitable language in which to teach introductory programming, in a course
+taught like HTDP. Haskell has little syntax, which allows more freedom in
+course structure, but it has helpful syntax such as pattern matching, and
+is similar to mathematical notation that students might be familiar with.
+
+There are already instances of introductory programming courses in Haskell,
+such as at the University of Edinburgh, and even here in Australia at the
+Australian National University. For a while the University of New South Wales
+also used Haskell. The course was taught by Manuel Chakravarty and Gabriele
+Keller, who wrote a paper about their experiences in 2004. They also wrote
+a textbook, although regretably it has been effectively lost to time.
+Chakravarty and Keller's work lives on in their interactive Haskell IDE
+"Haskell for Mac", which captures the essence of the IDE used to great effect
+in HTDP.
+
+If you wanted to create such an introductory course, I'd recommend a few other
+resources as well. Look at a course called CIS194 from the University of
+Pennsilvania, whose course materials are freely available online.
+HTDP still has the advantage of restricting the language to give a staged
+approach. The same thing would be harder to achieve in Haskell, but you can use
+a custom prelude along with NoImplicitPrelude to offer a more beginner friendly
+prelude. An example is specialising numerical operations to Integer so that type
+error messages do not include Num constraints. Also specialising functions like
+`length` to take lists.
