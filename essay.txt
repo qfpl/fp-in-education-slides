@@ -1,0 +1,135 @@
+Functional Programming in Education
+
+Recently I've been thinking about how programming is taught, and how this
+teaching could be improved. When I say improved, I mean that more students
+would come away with a firm grasp of fundamental computing concepts and of
+how to break down a problem and assemble a solution.
+
+I am mostly focussed on the first programming course at a tertiary level.
+There is usually a subject called Programming 1 or Introduction to Programming
+which teaches students the basics of writing programs. I claim that the choice
+of which language to teach is one of the keys to the quality of that course.
+The thesis of this talk is that some functional languages have properties that
+make them very desirable for this.
+
+Some languages are better suited than others for teaching programming.
+For example, look at the following Java "hello, world" program.
+
+```
+class Hello {
+  public static void main(String[] args) {
+    System.out.println("Hello, world!");
+  }
+}
+```
+
+I argue that this example demonstrates why Java is not a suitable first
+programming language to teach. The class being Java's compilation unit makes
+a staged introduction to Java very difficult. Students are very likely going to
+copy verbatim chunks of this program without understanding them. To fully
+understand this program, one must understand:
+
+* a class
+* block structure
+* methods
+* access modifiers (private, public, protected, no modifier)
+* void
+* static members (System.out)
+* strings
+
+It is likely that by the end of the first course, the students still will not
+understand all those details of the first program they wrote.
+
+This strikes at a greater point, which is that the introductory course is
+typically syntax-directed, by which I mean the structure of the course
+closely follows the syntactic structure of the language being taught.
+In the first week we might learn about basic expressions, then the following
+week we might learn about if-statements, next week is while-loops and so on.
+This makes the structure of the course quite rigid and can lead to confusion
+in the students of syntax and purpose - the core concept to learn is iteration,
+and the while loop is our vehicle for achieving it in this language.
+
+The first book I want to talk about took a completely different approach.
+Structure and Interpretation of Computer Programs, from MIT in 1985, taught
+introductory computer science using Scheme, a dialect of the functional langauge
+LISP. LISP is famous for, among other things, having almost no syntax. LISP's
+single syntactic construct, the S-expression, is reused for all purposes.
+Because of this, most of the language can be taught in the first chapter of the
+book, or the first lecture. As the course progresses, they only need to introduce
+so-called special forms, such as `if` or `let`, which are just S-expressions
+that behave differently. Given this minimal syntax, more of the course is
+structured around the core concepts they want to teach, such as iteration.
+LISP can be used in a pure functional style and the first 100 pages of the book
+are taught this way. Using only pure functions means that students can use the
+substitution model to understand how a program will procede. This model is
+intuitive and will be familiar to students having done high-school algebra.
+Students learn how about many core concepts such as data
+structures in this setting. Variable assignment is introduced later and all the
+pain that comes with it. The substitution model no longer applies, and
+the execution of programs is much harder to understand for the rest of the course.
+The book is able to cover a staggering breadth of computing concepts in a single
+university subject. Students learn core theoretical concerns like complexity
+analysis, programming paradigms, interpreters, and they extend LISP itself to
+implement logic programming and object-oriented programming.
+
+But SICP is not perfect. A team of academics published a paper critiquing
+SICP, and wrote their own book called How to Design Programs (HTDP). So how
+is their book different?
+They critique SICP for missing key lessons about basic software development,
+while focusing on more advanced topics. Key things like: how to break down a
+problem into an appropriate collection of components to then build a soltion;
+how to refactor a large function into several small functions; and how to test
+a function. HTDP addresses these things with their
+so-called design recipes. The book focuses much more on the fundamentals of
+putting programs together than on computer science concepts like langauge
+paradigms. SICP was also criticised for using examples from difficult domains
+that first year students might not have been exposed to - such as calculus and
+digital circuit design. HTDP's examples, while arguably more contrived, tend to
+be more easily accessible to every student, such as managing the inventory at
+a pet shop.
+HTDP still uses Scheme, so it retains the advantage of minimal syntax, and it
+takes things one step further. HTDP comes with an easy-to-use IDE for students
+to write and run their programs in, with a REPL window. This encourages an iterative
+style of development, which is something they intended. They also give a staged
+introduction to Scheme by having several subsets of Scheme available inside the
+IDE. The advantage of this is that when using the more beginner subsets of Scheme,
+the interpreter can give more specific error messages, and the restriction in power
+means that we can view the evaluation of the program step-by-step, which helps
+students understand the substitution model of evaluation.
+For these reasons I think HTDP does a much better job than SICP of teaching students
+the practice of programming itself, whereas SICP spends a lot of focus on computer
+science. It is the best book I know of for learning programming today.
+
+The HTDP folks were not the only ones to offer constructive criticism over SICP.
+In 1987, Professor Phil Wadler, who had been teaching a course based on SICP,
+published his paper Why Calculating is Better than Scheming, in which he praised
+the content of SICP, but advocated for the use of lazy, strongly typed functional
+languages over Scheme. The languages which fit this description were KRC and
+Miranda. These languages are ancestors of Haskell's. I believe many of Wadler's
+arguments also apply to HTDP, and I will focus on those arguments.
+Wadler argued in favour of more syntax than Scheme has. In particular, pattern-matching
+syntax allows us to clearly see the shape of the data we're working with. We can see
+that the structure of our program follows the structure of our data. Having more
+than just prefix syntax is also helpful if we want to prove or express properties
+of our programs, such as laws! The associativity law looks clear in Haskell
+syntax, but not so in Scheme.
+Wadler also argued for strong types, not just because they catch errors and allow
+the compiler to provide feedback, but mainly because they are a valuable tool of thought.
+They help us think about what data our functions work with and what data they
+produce. HTDP agrees with this, as it requires students to write a type
+signature for every function.
+Finally, Wadler advocated for a lazy langauge, because in lazy languages the
+substitution model always works. Both SICP and HTDP encourage reasoning with
+the substitution model, but because functions always evaluate their arguments,
+this is not always true. The program can, for example, go into an infinite loop.
+SICP even has an exercise to make sure you understand this, where they write
+`if` as a function and ask you to think about why it doesn't work. This motivates
+special forms. But lazy languages do not need special forms. We can write `if` as
+a function. This reduces unnecessary load of the students; the substitution model always
+works and special forms don't need to be separately taught.
+
+For these reasons, I think Haskell, or something like it, is an exceptionally
+suitable language in which to teach introductory programming. It has little
+syntax, which allows more freedom in course structure, but it has helpful
+syntax such as pattern matching, and is similar to mathematical notation that
+students might be familiar with.
