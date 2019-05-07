@@ -82,15 +82,15 @@ how to refactor a large function into several small functions; and how to test
 a function. HTDP addresses these things with their
 so-called design recipes. The book focuses much more on the fundamentals of
 putting programs together than on computer science concepts like langauge
-paradigms. SICP was also criticised for using examples from difficult domains
+paradigms. There are even exercises like "look up this function in the
+documentation". SICP was also criticised for using examples from difficult domains
 that first year students might not have been exposed to - such as calculus and
-digital circuit design. HTDP's examples, while arguably more contrived, tend to
-be more easily accessible to every student, such as managing the inventory at
-a pet shop.
+digital circuit design. HTDP's exercises tend to be more easily accessible to
+every student, such as managing the inventory at a pet shop.
 HTDP still uses Scheme, so it retains the advantage of minimal syntax, and it
 takes things one step further. HTDP comes with an easy-to-use IDE for students
 to write and run their programs in, with a REPL window. This encourages an iterative
-style of development, which is something they intended. They also give a staged
+and playful style of development. They also give a staged
 introduction to Scheme by having several subsets of Scheme available inside the
 IDE. The advantage of this is that when using the more beginner subsets of Scheme,
 the interpreter can give more specific error messages, and the restriction in power
@@ -98,15 +98,15 @@ means that we can view the evaluation of the program step-by-step, which helps
 students understand the substitution model of evaluation.
 For these reasons I think HTDP does a much better job than SICP of teaching students
 the practice of programming itself, whereas SICP spends a lot of focus on computer
-science. It is the best book I know of for learning programming today.
+science concepts. It is the best book I know of for learning programming today.
 
-The HTDP folks were not the only ones to offer constructive criticism over SICP.
+The HTDP folks were not the only ones to offer constructive criticism of SICP.
 In 1987, Professor Phil Wadler, who had been teaching a course based on SICP,
 published his paper Why Calculating is Better than Scheming, in which he praised
 the content of SICP, but advocated for the use of lazy, strongly typed functional
 languages over Scheme. The languages which fit this description were KRC and
 Miranda. These languages are ancestors of Haskell's. I believe many of Wadler's
-arguments also apply to HTDP, and I will focus on those arguments.
+arguments also apply to HTDP, and I will focus on those that do.
 Wadler argued in favour of more syntax than Scheme has. In particular, pattern-matching
 syntax allows us to clearly see the shape of the data we're working with. We can see
 that the structure of our program follows the structure of our data. Having more
