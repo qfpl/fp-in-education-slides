@@ -45,6 +45,7 @@
 
 \newminted{haskell}{}
 \newminted{scheme}{}
+\newminted{java}{}
 
 \lstdefinelanguage{haskell}{
   morekeywords={class,instance,where,do,data,newtype,default,deriving,module,import,qualified,as},
@@ -176,6 +177,19 @@ Which language?
 \end{frame}
 
 
+\begin{frame}[fragile]
+\Large
+\begin{javacode}
+class Hello {
+
+  public static void main(String[] args) {
+    System.out.println("Hello, world!");
+  }
+
+}
+\end{javacode}
+\end{frame}
+
 \begin{frame}
 \centering
 \begin{tabular}{|l|l|}
@@ -228,13 +242,21 @@ Week 5 & for-statement \\
 \begin{frame}[fragile]
 Evaluation by substitution
 
+\begin{schemecode}
+(define (sum-of-squares x y)
+  (+ (sqr x) (sqr y)))
+\end{schemecode}
+
 \nl
+\hrule
+\pnl
+
 \begin{schemecode}
      (sum-of-squares 3 4)
 
-=>   (+ (sq 3) (sq 4))
-=>   (+ (* 3 3) (sq 4))
-=>   (+ 9 (sq 4))
+=>   (+ (sqr 3) (sqr 4))
+=>   (+ (* 3 3) (sqr 4))
+=>   (+ 9 (sqr 4))
 =>   (+ 9 (* 4 4))
 =>   (+ 9 16)
 =>   25
