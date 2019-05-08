@@ -220,6 +220,17 @@ Week 5 & for-statement \\
 
 \begin{frame}[fragile]
 \begin{schemecode}
+(define (factorial n)
+  (if (<= n 1)
+      1
+      (* n (factorial (- n 1)))))
+\end{schemecode}
+\end{frame}
+
+
+\iffalse
+\begin{frame}[fragile]
+\begin{schemecode}
 (define (map proc items)
   (if (null? items)
       nil
@@ -237,6 +248,7 @@ Week 5 & for-statement \\
         ((< x 0) (- x))))
 \end{schemecode}
 \end{frame}
+\fi
 
 
 \begin{frame}[fragile]
@@ -253,23 +265,30 @@ Evaluation by substitution
 
 \begin{schemecode}
      (sum-of-squares 3 4)
-
-=>   (+ (sqr 3) (sqr 4))
-=>   (+ (* 3 3) (sqr 4))
-=>   (+ 9 (sqr 4))
-=>   (+ 9 (* 4 4))
-=>   (+ 9 16)
-=>   25
 \end{schemecode}
-\end{frame}
-
-
-\begin{frame}[fragile]
+\pause
 \begin{schemecode}
-(define (factorial n)
-  (if (<= n 1)
-      1
-      (* n (factorial (- n 1)))))
+=>   (+ (sqr 3) (sqr 4))
+\end{schemecode}
+\pause
+\begin{schemecode}
+=>   (+ (* 3 3) (sqr 4))
+\end{schemecode}
+\pause
+\begin{schemecode}
+=>   (+ 9 (sqr 4))
+\end{schemecode}
+\pause
+\begin{schemecode}
+=>   (+ 9 (* 4 4))
+\end{schemecode}
+\pause
+\begin{schemecode}
+=>   (+ 9 16)
+\end{schemecode}
+\pause
+\begin{schemecode}
+=>   25
 \end{schemecode}
 \end{frame}
 
@@ -336,43 +355,31 @@ Examples are drawn from overly-technical domains
 {\bf Criticisms}
 \end{center}
 \begin{center}
-Lacks treatment of foundational problem-solving techniques
+Lacking coverage of foundational problem-solving techniques
 \end{center}
 
 \begin{block}{}
-From an educational point of view, our experience suggests that undergraduate computer
-science courses should emphasize basic notions of modularity, specification, and
-data abstraction, and should not let these be displaced by more advanced topics,
+From an educational point of view, our experience suggests that undergraduate \\
+computer science courses \highlight{should emphasize basic notions of modularity, specification, and}
+\highlight{data abstraction}, and should not let these be displaced by more advanced topics,
 such as design patterns, object-oriented methods, concurrency, functional languages,
 and so on.
 
 \nl
 
 --- Jackson and Chapin, 2000
+(emphasis mine)
 \end{block}
-% TODO maybe improve the above typesetting
 \end{frame}
 
 %%%%% HTDP
 \imageslide[0.5]{htdp-cover.png}
 
+\imageslide[0.55]{expected-four-args.png}
 
-% \begin{frame}
+\imageslide[0.6]{language-levels.png}
 
-% Also uses Scheme - with a staged introduction and helpful error messages
-
-% uses simpler examples
-
-% focuses on techniques for breaking down problems and composing solutions
-
-% comes with its own IDE
-% \end{frame}
-
-
-% TODO IDE screenshots - staged approach
-
-
-% TODO design recipe screenshots
+\imageslide[0.5]{design-recipe.png}
 
 
 % TODO paper screenshots about how you are sort of expected to learn programming along the way
@@ -392,10 +399,11 @@ and so on.
 
 \begin{frame}[fragile]
 \begin{haskellcode}
-perimeter shape = case shape of
-  Square s      -> s * 4
-  Rectangle w h -> 2*w + 2*h
-  Circle r      -> 2 * pi * r
+perimeter shape =
+  case shape of
+    Square s      -> s * 4
+    Rectangle w h -> 2*w + 2*h
+    Circle r      -> 2 * pi * r
 \end{haskellcode}
 \end{frame}
 
@@ -484,8 +492,11 @@ map f l =
 \imageslide[1.3]{pushout1.pdf}
 \imageslide[1.3]{pushout2.pdf}
 
+\begin{frame}
 
-% TODO Haskell For Mac screenshot
+haskell for mac screenshot
+% TODO
+\end{frame}
 
 
 \begin{frame}[fragile]
@@ -532,11 +543,13 @@ import qualified GHC.Num as N
 \end{block}
 \end{frame}
 
+\begin{frame}
 
-% TODO talk about custom type error machinery
+custom type error machinery in GHC
 
-
-% TODO Helium?
+Helium?
+% TODO
+\end{frame}
 
 
 \begin{frame}

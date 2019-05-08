@@ -14,6 +14,7 @@
 *.class
 *.o
 *.hi
+*.synctex.gz
 /_minted-*/
 *-converted-to.pdf
 target/
