@@ -1,4 +1,4 @@
-ALL_TEX = education.tex
+ALL_TEX = education.tex sicp.tex htdp.tex wadler.tex now.tex
 EDUCATION = education.pdf
 PDFS = $(EDUCATION)
 LATEX = pdflatex -shell-escape
@@ -14,7 +14,7 @@ education: $(EDUCATION)
 open: education
 	evince $(EDUCATION)
 
-%.pdf: %.tex #diagrams/* examples/*
+education.pdf: $(ALL_TEX) #images/*
 	$(LATEX) $<
 	$(LATEX) $<
 	$(LATEX) $<

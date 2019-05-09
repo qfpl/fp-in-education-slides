@@ -1,0 +1,64 @@
+\imageslide[1.3]{pushout1.pdf}
+\imageslide[1.3]{pushout2.pdf}
+
+\begin{frame}
+
+haskell for mac screenshot
+% TODO
+\end{frame}
+
+
+\begin{frame}[fragile]
+
+\Large
+\begin{texttt}
+3 + False
+\end{texttt}
+\nl
+
+\large
+\begin{block}{}
+\begin{Verbatim}
+<interactive>:1:1: error:
+    • No instance for (Num Bool) arising from a use of ‘+’
+    • In the expression: 3 + False
+      In an equation for ‘it’: it = 3 + False
+\end{Verbatim}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+
+\begin{block}{Prelude.hs}
+\begin{haskellcode}
+module Prelude
+  ( N.Integer, (+)
+  , (==), Bool (..)
+  )
+where
+
+import Data.Bool (Bool (..))
+import qualified Data.Eq as E
+import GHC.Num (Integer)
+import qualified GHC.Num as N
+
+(+) :: Integer -> Integer -> Integer
+(+) = (N.+)
+
+(==) :: Integer -> Integer -> Bool
+(==) = (E.==)
+\end{haskellcode}
+\end{block}
+\end{frame}
+
+
+\imageslide[0.5]{helium.png}
+
+\begin{frame}
+
+custom type error machinery in GHC
+
+% TODO
+\end{frame}
+

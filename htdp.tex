@@ -1,0 +1,70 @@
+%%%%% HTDP
+
+\begin{frame}[fragile]
+
+\begin{center}
+{\bf Criticisms}
+\end{center}
+\begin{center}
+Examples are drawn from overly-technical domains
+
+\nl
+
+{\scriptsize
+\begin{schemecode}
+(define (deriv exp var)
+  (cond ((number? exp) 0)
+        ((variable? exp)
+         (if (same-variable? exp var) 1 0))
+        ((sum? exp)
+         (make-sum (deriv (addend exp) var)
+                   (deriv (augend exp) var)))
+        ((product? exp)
+         (make-sum
+           (make-product (multiplier exp)
+                         (deriv (multiplicand exp) var))
+           (make-product (deriv (multiplier exp) var)
+                         (multiplicand exp))))
+        (else
+         (error "unknown expression type -- DERIV" exp))))
+\end{schemecode}
+}
+\end{center}
+% TODO maybe improve this
+\end{frame}
+
+
+\begin{frame}
+
+\begin{center}
+{\bf Criticisms}
+\end{center}
+\begin{center}
+Lacking coverage of foundational problem-solving techniques
+\end{center}
+
+\begin{block}{}
+From an educational point of view, our experience suggests that undergraduate \\
+computer science courses \highlight{should emphasize basic notions of modularity, specification, and}
+\highlight{data abstraction}, and should not let these be displaced by more advanced topics,
+such as design patterns, object-oriented methods, concurrency, functional languages,
+and so on.
+
+\nl
+
+--- Jackson and Chapin, 2000
+(emphasis mine)
+\end{block}
+\end{frame}
+
+
+\imageslide[0.5]{htdp-cover.png}
+
+\imageslide[0.55]{expected-four-args.png}
+
+\imageslide[0.6]{language-levels.png}
+
+\imageslide[0.5]{design-recipe.png}
+
+
+% TODO paper screenshots about how you are sort of expected to learn programming along the way
