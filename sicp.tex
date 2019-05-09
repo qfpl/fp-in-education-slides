@@ -29,9 +29,9 @@ Week 5 & for-statement \\
 \begin{frame}[fragile]
 \begin{schemecode}
 (define (factorial n)
-  (if (<= n 1)
-      1
-      (* n (factorial (- n 1)))))
+  (cond (<= n 1)
+        1
+        (* n (factorial (- n 1)))))
 \end{schemecode}
 \end{frame}
 
@@ -40,7 +40,7 @@ Week 5 & for-statement \\
 \begin{frame}[fragile]
 \begin{schemecode}
 (define (map proc items)
-  (if (null? items)
+  (cond (null? items)
       nil
       (cons (proc (car items))
             (map proc (cdr items)))))

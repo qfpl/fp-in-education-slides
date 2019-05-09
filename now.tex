@@ -34,20 +34,14 @@ haskell for mac screenshot
 \begin{haskellcode}
 module Prelude
   ( N.Integer, (+)
-  , (==), Bool (..)
   )
 where
 
-import Data.Bool (Bool (..))
-import qualified Data.Eq as E
 import GHC.Num (Integer)
 import qualified GHC.Num as N
 
 (+) :: Integer -> Integer -> Integer
 (+) = (N.+)
-
-(==) :: Integer -> Integer -> Bool
-(==) = (E.==)
 \end{haskellcode}
 \end{block}
 \end{frame}
