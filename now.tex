@@ -8,6 +8,10 @@
 % \end{frame}
 
 
+\imageslide[0.4]{language-choice-paper-title.png}
+\imageslide[0.5]{language-choice-fig3-red-box.png}
+
+
 \begin{frame}[fragile]
 
 \Large
@@ -30,6 +34,53 @@
 
 \begin{frame}[fragile]
 
+{\large
+GHC custom type errors
+}
+
+\nl
+
+\begin{haskellcode}
+{-# language DataKinds, TypeFamilies, TypeOperators #-}
+{-# language UndecidableInstances #-}
+
+import GHC.TypeLits
+
+instance TypeError (Text "Booleans are not numbers" :$$:
+                    Text "so we cannot add or multiply them")
+  => Num Bool where
+\end{haskellcode}
+\end{frame}
+
+
+\begin{frame}[fragile]
+
+\Large
+\begin{texttt}
+3 + False
+\end{texttt}
+\nl
+
+\large
+\begin{block}{}
+\begin{Verbatim}
+<interactive>:1:1: error:
+    • Booleans are not numbers
+      so we cannot add or multiply them
+    • In the expression: 3 + False
+      In an equation for ‘it’: it = 3 + False
+\end{Verbatim}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[fragile]
+
+{\large
+Custom preludes for a staged introduction
+}
+\nl
+
 \begin{block}{Prelude.hs}
 \begin{haskellcode}
 module Prelude
@@ -49,12 +100,4 @@ import qualified GHC.Num as N
 
 \imageslide[0.5]{helium.png}
 
-\begin{frame}
-
-{\bf placeholder slide}
-
-custom type error machinery in GHC
-
-% TODO
-\end{frame}
 
